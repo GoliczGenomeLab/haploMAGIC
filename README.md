@@ -12,8 +12,8 @@ Rscript 0.haplomagic.R example 1 3 imputeTHonly correctFalseHom 10000
 #### For running haploMAGIC, install the scripts in the same directory with the input.
 
 #### The 2 inputs required by haploMAGIC for each run consist in:
-* One PED file in 12 format, containing the pedigree info and the SNP genotypes of all the individuals of the population. The naming format must be *[population]_[chromosome].ped*. haploMAGIC populations are required to have (1) complete pedigree (both parents known for every individual except founders), (2) complete genotypes, (3) homozygous founder lines. If your population does not meet this criteria, consider subsetting into subfamilies and filtering homozygous loci.
-* One MAP file with the SNP marker information. The naming format must be *[population]_[chromosome].map*
+* One PED file in 12 format, containing the pedigree info and the SNP genotypes of all the individuals of the population. The naming format must be *[population]_[chromosome].ped*. PED files show genotypes by rows with space-separated columns, where the first 6 contain pedigree information and the rest X columns contain the alleles in each SNP (0, missing ; 1, major ; 2, minor), with X being twice the number of rows in the MAP file. Pedigree columns are generation, named *GX* with X from 0 (founder lines) until the last generation (G0, G1, G2...), offspring, father and mother IDs, sex and phenotype. These two last columns are not required. haploMAGIC populations are required to have (1) complete pedigree (both parents known for every individual except founders), (2) complete genotypes, (3) homozygous founder lines. If your population does not meet this criteria, consider subsetting into subfamilies and filtering homozygous loci.
+* One MAP file with the SNP marker information. The naming format must be *[population]_[chromosome].map*. MAP files show SNPs by rows with four tab-separated columns: chromosome, SNP marker ID, genetic position (cM) and physical position in the chromosome (bp). Genetic positions are not required and can be filled with 0.
 
 #### The standard haploMAGIC command prompt looks like this:
 ```
