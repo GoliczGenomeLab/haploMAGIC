@@ -35,7 +35,7 @@ Rscript 0.haplomagic.R <population(s)> <chromosome(s)> <min> <imp> <cor> <thr>
 * 6. Base pair threshold, *thr* (any integer >0). For classifying recombination events as gene conversions (<) or crossovers (>) based on the length of the flanking haploblocks.
 
 #### When running the standard prompt with lists of files, each PED/MAP pair is analyzed in series. For parallelizing haploMAGIC runs, we recommend the following method:
-* 1. Create a list (INPUT) where each line represents a different haploMAGIC input
+* 1. Create a list (INPUT) where each line represents a different haploMAGIC input*
 ```
 pop1 chr1 min imp cor thr #Run1
 pop2 chr2 min imp cor thr #Run2
@@ -48,7 +48,7 @@ cat INPUT | xargs -L1 -P3 Rscript 0.haplomagic.R
 -P for adjusting the number of cores available. -L1 should not be changed.
 
 #### Output explained:
-*All output files are space-separated. Here is a description of the files users might find most important:
+*All output files are space-separated. Here is a description of the files users might find most important:*
 | File extension	| Description |
 | --------------	| ----------- |
 | *.phase*	| Sequence of phased alleles (0, 1, 2) on same chromosome with row names indicating *[individual]*_*[parental phase]*, where P and M stand for paternal or maternal phase respectively. |
