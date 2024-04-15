@@ -22,17 +22,17 @@ Rscript 0.haplomagic.R <population(s)> <chromosome(s)> <min> <imp> <cor> <thr>
 #### Arguments explained:
 * 1. Population(s). The IDs of one or a list of populations to analyze. The PED files of these populations must be present for the chromosomes provided. If multiple, write IDs between "" and split by space.
 * 2. Chromosome(s). The IDs of one or a list of chromosomes to analyze. The PED files of these chromosomes must be present for the populations provided. If multiple, write IDS between "" and split by space.
-* 3. Min threshold, min (any integer >0). Minimum number of informative alleles per haploblock. Haplotype origins of the alleles within the haploblock <min are imputed, thus they will not be contribute to recombination events. Min is a filtering method that increases precision, with min=1 being equivalent to no filtering and higher min values increasing stringency.
-* 4. Phase imputation method, imp (imputeAll/imputeTHonly/imputeNot). At phasing, some loci cannot be resolved if for them all three trio members are heterozygous (TH), any of them has missing data (MD) or follow incorrect Mendelian inheritance patterns, i.e., Mendelian errors (ME). Imputing missing phases increases recall, but might reduce precision. Users can choose between these options:
-	* imputeTHonly: Only impute the phases of TH loci.
-	* imputeAll: Impute the phase of all unresolved loci (TH, MD & ME).
-	* imputeNot: Do not impute any unresolved phase.
-* 5. Post-imputation phase correction method, cor (correctAll/correctFalseHom/reImpute/correctNot):
-	* correctFalseHom: The phase from triply heterozygous loci that were incorrectly imputed as homozygous remain unresolved. This method increases precision.
-	* reImpute: The phase of unresolved alleles are imputed if the phase of the homologous alelle is known. This method increases recall, but it is not recommended alone. Instead, use 'correctAll'.
-	* correctAll: correctFalseHom+reImpute.
-	* correctNot: no correction applied. Default when imp=imputeNot.
-* 6. Base pair threshold, thr (any integer >0). For classifying recombination events as gene conversions (<) or crossovers (>) based on the length of the flanking haploblocks.
+* 3. Min threshold, *min* (any integer >0). Minimum number of informative alleles per haploblock. Haplotype origins of the alleles within the haploblock <min are imputed, thus they will not be contribute to recombination events. *min* is a filtering method that increases precision, with *min=1* being equivalent to no filtering and higher *min* values increasing stringency.
+* 4. Phase imputation method, *imp* (*imputeAll*/*imputeTHonly*/*imputeNot*). At phasing, some loci cannot be resolved if for them all three trio members are heterozygous (TH), any of them has missing data (MD) or follow incorrect Mendelian inheritance patterns, i.e., Mendelian errors (ME). Imputing missing phases increases recall, but might reduce precision. Users can choose between these options:
+	* *imputeTHonly*: Only impute the phases of TH loci.
+	* *imputeAll*: Impute the phase of all unresolved loci (TH, MD & ME).
+	* *imputeNot*: Do not impute any unresolved phase.
+* 5. Post-imputation phase correction method, *cor* (*correctAll*/*correctFalseHom*/*reImpute*/*correctNot*):
+	* *correctFalseHom*: The phase from triply heterozygous loci that were incorrectly imputed as homozygous remain unresolved. This method increases precision.
+	* *reImpute*: The phase of unresolved alleles are imputed if the phase of the homologous alelle is known. This method increases recall, but it is not recommended alone. Instead, use *correctAll*.
+	* *correctAll*: *correctFalseHom*+*reImpute*.
+	* *correctNot*: no correction applied. Default when *imp=imputeNot*.
+* 6. Base pair threshold, *thr* (any integer >0). For classifying recombination events as gene conversions (<) or crossovers (>) based on the length of the flanking haploblocks.
 
 #### When running the standard prompt with lists of files, each PED/MAP pair is analyzed in series. For parallelizing haploMAGIC runs, we recommend the following method:
 * 1. Create a list (INPUT) where each line represents a different haploMAGIC input
