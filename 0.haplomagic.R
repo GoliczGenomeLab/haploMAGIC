@@ -5,12 +5,10 @@
 #description: controls the execution of the pipeline
 #author: jmontero
 #email: jose.a.montero-tena@ab.uni-giessen.de
-#date: 2023-02-21
+#date: 2024-06-20
 #version: 1.0.0
 #notes:
 #==================================================================================
-
-suppressMessages(suppressWarnings(if(!require("fread")){ install.packages("fread") }))
 
 args = commandArgs(trailingOnly=TRUE)
 
