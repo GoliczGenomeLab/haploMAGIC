@@ -1,4 +1,11 @@
 ![haplomagic2](https://github.com/GoliczGenomeLab/haploMAGIC/assets/134378980/7e5d9334-7760-456e-ab8e-68e86156e7bc)
+
+# README
+haploMAGIC is a pipeline for phasing and CO detection in multiparental populations (MPPs) with single-nucleotide polymorphism (SNP) genotypes of individuals derived from inbred founder lines. haploMAGIC was specifically designed for MPPs and outperformed similar tools, duoHMM and LINKPHASE3, in F1 scores obtained detecting recombination events in simulated MPPs (Montero-Tena et al. 2024). Notably, haploMAGIC performs consistently with high genotyping error rates.
+
+## Publication
+Montero-Tena, J. A., Abdollahi Sisi, N., Kox, T., Abbadi, A., Snowdon, R. J., & Golicz, A. A. (2024). haploMAGIC: accurate phasing and detection of recombination in multiparental populations despite genotyping errors. G3 (Bethesda, Md.), 14(8), jkae109. https://doi.org/10.1093/g3journal/jkae109
+
 ## Quick setup
 
 #### Download repository and execute on the example data:
